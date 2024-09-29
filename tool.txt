@@ -1,0 +1,26 @@
+//paleta de colores 
+
+--waikawa-gray-50: #f4f7fa;
+--waikawa-gray-100: #e6ecf3;
+--waikawa-gray-200: #d2ddeb;
+--waikawa-gray-300: #b3c7dd;
+--waikawa-gray-400: #8faacb;
+--waikawa-gray-500: #7490bd;
+--waikawa-gray-600: #6179af;
+--waikawa-gray-700: #526498;
+--waikawa-gray-800: #4a5783;
+--waikawa-gray-900: #3f4a69;
+--waikawa-gray-950: #2a2f41;
+
+
+0xF4F7FA
+0xE6ECF3
+0xD2DDEB
+0xB3C7DD
+0x8FAACB
+0x7490BD
+0x6179AF
+0x526498
+0x4A5783
+0x3F4A69
+0x2A2F41
