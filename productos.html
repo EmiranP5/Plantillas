@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Productos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+<body>
+    <div class="d-flex justify-content-center">
+        <h1>Formulario Productos!</h1>
+    </div>
+    <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modal_producto" onclick="limpiar()">Nuevo Producto</button>
+    </div>
+
+    <div class="container">
+        <!-- Modal para CRUD de Productos -->
+        <div class="modal fade" id="modal_producto" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <form method="post" class="form-group">
+                            <label for="txt_idProducto"><b>Id Producto</b></label>
+                            <input type="text" name="txt_idProducto" id="txt_idProducto" class="form-control" placeholder="Ejemplo: P001" required>
+                            
+                            <label for="txt_nombre"><b>Producto:</b></label>
+                            <input type="text" name="txt_nombre" id="txt_nombre" class="form-control" placeholder="Ejemplo: Producto 1" required>
+                            
+                            <label for="drop_marca"><b>Marca:</b></label>
+                            <select name="drop_marca" id="drop_marca" class="form-control">
+                                <option value="1">Marca 1</option>
+                                <option value="2">Marca 2</option>
+                                <option value="3">Marca 3</option>
+                            </select>
+                            
+                            <label for="txt_descripcion"><b>Descripcion:</b></label>
+                            <input type="text" name="txt_descripcion" id="txt_descripcion" class="form-control" placeholder="Ejemplo: Descripción del producto" required>
+                            
+                            <label for="txt_imagen"><b>Imagen:</b></label>
+                            <input type="text" name="txt_imagen" id="txt_imagen" class="form-control" placeholder="URL de la imagen" required>
+                            
+                            <label for="txt_precio_costo"><b>Precio Costo:</b></label>
+                            <input type="number" name="txt_precio_costo" id="txt_precio_costo" class="form-control" placeholder="Ejemplo: 10.00" required>
+                            
+                            <label for="txt_precio_venta"><b>Precio Venta:</b></label>
+                            <input type="number" name="txt_precio_venta" id="txt_precio_venta" class="form-control" placeholder="Ejemplo: 15.00" required>
+                            
+                            <label for="txt_existencia"><b>Existencia:</b></label>
+                            <input type="number" name="txt_existencia" id="txt_existencia" class="form-control" placeholder="Cantidad en stock" required>
+                            
+                            <label for="txt_fecha_ingreso"><b>Fecha Ingreso</b></label>
+                            <input type="date" name="txt_fecha_ingreso" id="txt_fecha_ingreso" class="form-control" required>
+                            
+                            <br>
+                            <button name="btn_agregar" id="btn_agregar" class="btn btn-primary btn-lg">Agregar</button>
+                            <button name="btn_modificar" id="btn_modificar" class="btn btn-secondary btn-lg">Modificar</button>
+                            <button name="btn_eliminar" id="btn_eliminar" class="btn btn-danger btn-lg" onclick="javascript:if(!confirm('¿Desea Eliminar?'))return false">Eliminar</button>
+                            <button type="button" class="btn btn-warning btn-lg" data-dismiss="modal">Cerrar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabla para mostrar productos -->
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Marca</th>
+                    <th>Descripcion</th>
+                    <th>Imagen</th>
+                    <th>Precio Costo</th>
+                    <th>Precio Venta</th>
+                    <th>Existencia</th>
+                    <th>Fecha Ingreso</th>
+                </tr>
+            </thead>
+            <tbody id="tbl_productos">
+                <!-- Datos de ejemplo de productos -->
+                <tr>
+                    <td>Producto 1</td>
+                    <td>Marca 1</td>
+                    <td>Descripción 1</td>
+                    <td><a href="#">Ver Imagen</a></td>
+                    <td>10.00</td>
+                    <td>15.00</td>
+                    <td>100</td>
+                    <td>2024-09-29</td>
+                </tr>
+                <tr>
+                    <td>Producto 2</td>
+                    <td>Marca 2</td>
+                    <td>Descripción 2</td>
+                    <td><a href="#">Ver Imagen</a></td>
+                    <td>20.00</td>
+                    <td>25.00</td>
+                    <td>50</td>
+                    <td>2024-09-29</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function limpiar() {
+            $("#txt_idProducto").val("");
+            $("#txt_nombre").val("");
+            $("#drop_marca").val("1");
+            $("#txt_descripcion").val("");
+            $("#txt_imagen").val("");
+            $("#txt_precio_costo").val("");
+            $("#txt_precio_venta").val("");
+            $("#txt_existencia").val("");
+            $("#txt_fecha_ingreso").val("");
+        }
+    </script>
+</body>
+</html>
